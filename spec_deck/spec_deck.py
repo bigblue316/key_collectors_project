@@ -3,8 +3,8 @@ from webhook import send_webhook
 
 headers = {
     'accept': 'application/json, text/plain, */*',
-    'authorization': 'Token 2cd4f02171217c7049f1237c9b6485f317c48d87',
-    'api-key': '7c625c136abaac5fb5aa6f98b3a9196a0ef80c47',
+    'authorization': 'Token_here',
+    'api-key': 'api_key_here',
     'user-agent': 'Mozilla/5.0 (Linux; Android 6.0.1; KIW-L24 Build/HONORKIW-L24; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.152 Mobile Safari/537.36',
     'origin': 'http://localhost',
     'x-requested-with': 'com.keycollectorcomics.keycollector',
@@ -34,7 +34,7 @@ try:
     for new_id_list in parsed_json['results']:
         new_id = (new_id_list['id'])
 
-    with open('/home/ihofdomah/key_collectors_project/spec_deck/old_spec.json') as access_json:
+    with open('./key_collectors_project/spec_deck/old_spec.json') as access_json:
         old_json = json.load(access_json)
         for old_id_list in old_json['results']:
             old_id = (old_id_list['id'])
@@ -43,12 +43,12 @@ try:
     if new_id != old_id:
         print('Found update')
         send_webhook()
-        with open("/home/ihofdomah/key_collectors_project/spec_deck/old_spec.json", "w") as file:        ## WRITE new JSON FILE ##
+        with open("./key_collectors_project/spec_deck/old_spec.json", "w") as file:        ## WRITE new JSON FILE ##
             file.write(json.dumps(parsed_json))
     else:
         print('No update')
 
 except:
-    with open("/home/ihofdomah/key_collectors_project/spec_deck/old_spec.json", "w") as file:        ## WRITE old JSON FILE ##
+    with open("./key_collectors_project/spec_deck/old_spec.json", "w") as file:        ## WRITE old JSON FILE ##
         file.write(json.dumps(parsed_json))
     print('First file created')
