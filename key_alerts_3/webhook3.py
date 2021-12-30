@@ -3,8 +3,8 @@ import requests, json, time, os
 def send_webhook():
     headers = {
         'accept': 'application/json, text/plain, */*',
-        'authorization': 'Token 2cd4f02171217c7049f1237c9b6485f317c48d87',
-        'api-key': '7c625c136abaac5fb5aa6f98b3a9196a0ef80c47',
+        'authorization': 'Token_here',
+        'api-key': 'api_key_here',
         'user-agent': 'Mozilla/5.0 (Linux; Android 6.0.1; KIW-L24 Build/HONORKIW-L24; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.152 Mobile Safari/537.36',
         'origin': 'http://localhost',
         'x-requested-with': 'com.keycollectorcomics.keycollector',
@@ -107,13 +107,8 @@ def send_webhook():
         url_str = '\n'.join(all_urls)
 
     ### SEND TO WEBHOOK ###
-    # Webhook URL """ Comment out the TEST URL if no URL changes needed for script """
-        #IHOF Discord#
-        url = "https://discord.com/api/webhooks/805252534578970636/DS_R-6FtQUgEVDgCwW4eR47pNWIMHTZsBRB2f9fX3SBjPV7julFbv8K7nGGlEXmTxyL8"
-
-        #TEST Discord#
-        # url = "https://ptb.discord.com/api/webhooks/595473033263841285/i78DFApF19jA7ZnqUe8_1Enilx78999z4RwKhKG1S-ru21BxFMg0tkLZsC3M4n2VnG7i"
-
+    # Webhook URL 
+        url = "discord_url_here"
         #for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
         data = {
         "username": "Key Alerts, News & Updates",
