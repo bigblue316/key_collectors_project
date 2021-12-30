@@ -33,7 +33,7 @@ try:    #  get id's  #
     for new_id_list in parsed_json['results']:
         new_id = (new_id_list['id'])
 
-    with open('/home/ihofdomah/key_collectors_project/hot_10/latest.json') as access_json:
+    with open('./key_collectors_project/hot_10/latest.json') as access_json:
         old_json = json.load(access_json)
 
     for old_id_list in old_json['results']:
@@ -43,12 +43,12 @@ try:    #  get id's  #
     if new_id != old_id:
         print('Found update')
         send_webhook()
-        with open("/home/ihofdomah/key_collectors_project/hot_10/latest.json", "w") as file:    ## WRITE JSON FILE ##
+        with open("./key_collectors_project/hot_10/latest.json", "w") as file:    ## WRITE JSON FILE ##
             file.write(json.dumps(parsed_json))
     else:
         print('No update')
 
 except:
     print('First file created')
-    with open("/home/ihofdomah/key_collectors_project/hot_10/latest.json", "w") as file:    ## WRITE JSON FILE ##
+    with open("./key_collectors_project/hot_10/latest.json", "w") as file:    ## WRITE JSON FILE ##
         file.write(json.dumps(parsed_json))
