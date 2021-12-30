@@ -87,14 +87,8 @@ def send_webhook():
         time.sleep(1.5)
 
     ### SEND TO WEBHOOK ###
-    # Webhook URL """ Comment out the TEST URL if no URL changes needed for script """
-        #IHOF Discord#
-        url = "https://discord.com/api/webhooks/805260421317132308/6mW92E_5KwJf4Dhs2KB7zga8x0fhfeZ1ludRAJIr2BL0SXemEiU8YdHRpMoIaW0rsyac"
-
-        #TEST Discord#
-        # url = "https://ptb.discord.com/api/webhooks/595473033263841285/i78DFApF19jA7ZnqUe8_1Enilx78999z4RwKhKG1S-ru21BxFMg0tkLZsC3M4n2VnG7i"
-
-        #for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
+    # Webhook URL
+        url = "webhook_url_here"
         data = {
     "username": "Weekly 10 Highest Sales",
     "avatar_url": "https://cdn.discordapp.com/attachments/597604981193048094/661661086470111243/ihofava.gif",
